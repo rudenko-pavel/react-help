@@ -1,0 +1,14 @@
+.main-wrapper{
+    margin-top: 2em !important;
+    border: 1px solid red;
+    padding: 5px !important;
+    .label{
+        position: relative !important;
+    }
+    .ItemsList      { border: 1px solid blue;   }
+    .ItemDetail     { border: 1px solid orange; }
+    .SearchBar      { border: 1px solid blue; }
+    .VideoList      { border: 1px solid green; }
+    .VideoItem      { border: 1px solid blue; margin: 10px; }
+    .VideoDetail    { border: 1px solid orange; }
+}
