@@ -13,7 +13,7 @@ const ItemDetail=({item}) =>{
 }
 
 const mapStateToProps = (state) => {
-    console.log("ItemDetail->mapStateToProps: ",state);
+    //console.log("ItemDetail->mapStateToProps: ",state);
     return {item: state.selectedItem};
 }
 export default connect(mapStateToProps)(ItemDetail);

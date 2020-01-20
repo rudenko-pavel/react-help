@@ -277,5 +277,3 @@ project: REACT-songs
 
 23. Change `ItemDetail Component` (`src/component/ItemDetail.js`):
     ## add css
-	
-	

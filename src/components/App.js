@@ -9,30 +9,31 @@ import youtube from '../apis/youtube';
 import VideoList from './11/VideoList';
 import VideoDetail from './11/VideoDetail';
 
+import PostList from './14/PostList';
+
 class App extends React.Component{
     state= { videos: [], selectedVideo: null };
 
     componentDidMount(){
-        this.onTermSubmit('sun');
+        this.onTermSubmit('sun');                       //for chapter 11. default value
     }
 
-
-    onTermSubmit = async (term) => {
+    onTermSubmit = async (term) => {                    //for chapter 11
         const response = await youtube.get('/search', {
             params:{
                 q: term
             }
         });
-        console.log(response);
+        //console.log(response);
         this.setState({
             videos: response.data.items,
             selectedVideo:response.data.items[0]
         });
     };
 
-    onVideoSelect = (video) =>{
+    onVideoSelect = (video) =>{                         //for chapter 11
         this.setState({ selectedVideo: video });
-        console.log("onVideoSelect: ", video)
+       // console.log("onVideoSelect: ", video)
     };
 
     render(){
@@ -52,6 +53,7 @@ class App extends React.Component{
                         <ItemDetail />
                     </div>
                 </div>
+
 
                 <div className="ui row">
                     <div className="column sixteen wide">
@@ -74,8 +76,23 @@ class App extends React.Component{
                             videos={this.state.videos}
                         />
                     </div>
-                    
                 </div>
+
+
+                <div className="ui row">
+                    <div className="column sixteen wide">
+                        <hr/>
+                        <h3>chapter 14: Async Actions with Redux Thunk</h3>
+                    </div>
+                    <div className="column sixteen wide PostList">
+                        <div className="ui top left orange attached label">PostList</div>
+                        <PostList />
+                    </div>
+
+                </div>
+
+
+
             </div>
         )
     }

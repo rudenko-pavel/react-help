@@ -5,11 +5,14 @@ import './index.scss';                  // import css
 import 'semantic-ui-css/semantic.min.css';
 
 import { Provider } from 'react-redux'; // Компонент `Provider` дает знать приложению, как использовать react-redux
-import { createStore } from 'redux';    // `createStore` - хранилище данных 
+import { createStore, applyMiddleware } from 'redux';    // `createStore` - хранилище данных 
 import reducers from './reducers';
+import thunk from 'redux-thunk';
+
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
-    <Provider store={createStore(reducers)}>
+    <Provider store={store}>
         <App />
     </Provider>, 
     document.querySelector("#root")

@@ -24,7 +24,7 @@ class ItemsList extends Component{
     }
 
     render(){
-        console.log("SongList->render(): ",this.props);
+       // console.log("SongList->render(): ",this.props);
         return( //название разное для разных приложений
             <div className="ui divided list">
                 {this.renderList()}
@@ -34,7 +34,7 @@ class ItemsList extends Component{
 }
 
 const mapStateToProps = (state) => {
-    console.log("ItemsList->mapStateToProps: ",state);
+   // console.log("ItemsList->mapStateToProps: ",state);
     return {items: state.items};
 }
 
